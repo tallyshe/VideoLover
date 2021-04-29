@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    var videos: [Video] = VideoList.topTen
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        List(videos, id: \.id) { video in
+            Text(video.title)
+                .padding()
+        }
+
     }
 }
 
